@@ -14,11 +14,6 @@ app.get("/" , (req,res)=>{
 })
 
 
-
-
-
-
-//QI1EfVxdlgQy7Z1M
 mongoose.connect("mongodb+srv://hamayunsaeed48:QI1EfVxdlgQy7Z1M@cluster0.n788t.mongodb.net/Clustor0?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
     console.log("your app connect with database")
