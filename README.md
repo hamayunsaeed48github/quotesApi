@@ -1,6 +1,6 @@
 This is base url 
 <br>
-https://quotes-kpveijjxy-hamayun-saeeds-projects.vercel.app/
+https://quotes-api-git-main-hamayun-saeeds-projects.vercel.app/
 <br>
 below is end point of this api
 <br>
