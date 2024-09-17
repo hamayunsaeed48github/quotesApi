@@ -1,4 +1,5 @@
 const Product = require("../model/product.model")
+const Upload = require("../helper/upload")
 
 const getProducts = async (req,res) =>{
     try {
@@ -23,8 +24,23 @@ const getProductById = async (req,res) =>{
 
 const addProduct = async (req,res) =>{
     try {
-        const product = await Product.insertMany(req.body)
-        res.status(200).json(product)
+        // const product = await Product.insertMany(req.body)
+        // res.status(200).json(product)
+
+        if (!req.file) {
+            return res.status(400).json({ message: 'No file uploaded!' });
+        }
+    
+        const upload = await Upload.uploadFile(req.file.path); // Cloudinary upload
+    
+        const { quotes } = req.body;
+        var product = new Product({
+            quotes,
+            image: upload.secure_url, // Get image URL from Cloudinary upload
+        });
+    
+        var record = await product.save();
+        res.send({ success: true, msg: 'File uploaded successfully', url: record });
     } catch (error) {
         res.status(500).json({message:error.message})
     }
