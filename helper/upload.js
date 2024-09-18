@@ -8,6 +8,7 @@ cloudinary.config({
 });
 
 const uploadFile = async (filepath) =>{
+    console.log(filepath)
     try {
         const result = await cloudinary.uploader.upload(filepath);
         console.log('Cloudinary upload result:', result); // Log the result to see if secure_url exists

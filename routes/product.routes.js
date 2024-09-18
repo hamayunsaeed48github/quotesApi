@@ -5,7 +5,7 @@ const multer = require("multer")
 
 var uploader = multer({
     storage:multer.diskStorage({}),
-    limits:{fileSize : 500000 },
+    // limits:{fileSize : 500000 },
     fileFilter: (req, file, cb) => {
         if (file.mimetype.startsWith('image/')) {
             cb(null, true); // Accept the file
