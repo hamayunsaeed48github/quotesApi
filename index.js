@@ -16,7 +16,7 @@ app.get("/" , (req,res)=>{
 })
 
 
-mongoose.connect(`mongodb+srv://hamayunsaeed48:${process.env.Databasekey}@cluster0.n788t.mongodb.net/Clustor0?retryWrites=true&w=majority&appName=Cluster0`)
+mongoose.connect("mongodb+srv://hamayunsaeed48:QI1EfVxdlgQy7Z1M@cluster0.n788t.mongodb.net/Clustor0?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
     console.log("your app connect with database")
     app.listen(process.env.PORT,()=>{
