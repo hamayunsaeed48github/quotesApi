@@ -27,3 +27,5 @@ mongoose.connect("mongodb+srv://hamayunsaeed48:QI1EfVxdlgQy7Z1M@cluster0.n788t.m
 .catch(()=>{
     console.log("your app can't connect with database")
 })
+
+module.exports = app;
