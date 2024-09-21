@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const ProductRoutes = require("./routes/product.routes")
+const dotenv = require('dotenv').config()
 const app = express()
 
 app.use(express.json())
@@ -15,10 +16,10 @@ app.get("/" , (req,res)=>{
 })
 
 
-mongoose.connect("mongodb+srv://hamayunsaeed48:QI1EfVxdlgQy7Z1M@cluster0.n788t.mongodb.net/Clustor0?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.DATABASE_URL)
 .then(()=>{
     console.log("your app connect with database")
-    app.listen(3000,()=>{
+    app.listen(process.env.PORT,()=>{
         console.log("server is running on port 3000")
     })
 
